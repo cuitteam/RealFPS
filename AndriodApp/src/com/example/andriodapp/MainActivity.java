@@ -1,21 +1,25 @@
 package com.example.andriodapp;
 
 import com.example.andriodapp.windows.MainView;
+import com.example.andriodapp.windows.RealFpsView;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		MainView mainView=new MainView(this.getBaseContext());
-		mainView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,mainView.getItemData()))	;
+		RealFpsView mainView=new RealFpsView(this.getBaseContext());
 		setContentView(mainView);
 	}
 
