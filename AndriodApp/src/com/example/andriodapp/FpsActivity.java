@@ -1,16 +1,21 @@
 package com.example.andriodapp;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
-
+/**
+ * 
+ * @author Silent
+ *
+ *Mainly display the fps of the window
+ */
+public class FpsActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
-		setContentView(R.layout.fps_view);
-		ActivityInitHandler fps=new WelcomePageHandler(this);
+		setContentView(R.layout.show_fps);
+		FpsHandler fps=new FpsHandler(this);
 	}
 
 	@Override
@@ -19,12 +24,4 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
-	
-	
-	
-	
-	
-	
-
 }
