@@ -18,6 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:textStyle="bold"
+        android:textSize="12dip"  
         android:layout_marginTop="22dp" />
 
 </RelativeLayout>

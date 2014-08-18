@@ -1,9 +1,14 @@
 package com.example.andriodapp;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
+import com.example.andriodapp.intent.MyIntent;
+
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +20,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 /**
  * 
@@ -24,6 +30,7 @@ import android.widget.Spinner;
 public class WelcomePageHandler extends ActivityInitHandler {
 	private Spinner sp=null;
 	private Button startButton=null;
+	private String prossName="";
 
 	public WelcomePageHandler(Activity activi) {
 		super(activi);
@@ -38,6 +45,8 @@ public class WelcomePageHandler extends ActivityInitHandler {
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
+				System.out.println("dd");
+				prossName=((TextView)arg1).getText().toString();
     //logic
 			}
 
@@ -56,15 +65,14 @@ public class WelcomePageHandler extends ActivityInitHandler {
  
 //				System.out.println("clicked");
 				FpsActivity fps=new FpsActivity();
-                Intent fpsIntent= new Intent(activity, FpsActivity.class);  
+				MyIntent fpsIntent= new MyIntent(activity, FpsActivity.class);  
+				fpsIntent.setMessage(prossName);
 				activity.startActivity(fpsIntent);
 			}
 			
 		});
 	}
-
-	@Override
-	public void initParamters() {
+public void initParamters() {
       sp.setAdapter(new ArrayAdapter(activity, android.R.layout.simple_dropdown_item_1line, scanProcessList()));
 	}
 	
@@ -76,10 +84,15 @@ public class WelcomePageHandler extends ActivityInitHandler {
 	 */
 	private List scanProcessList(){
 		//logic call the service of andriod
-		List list=new ArrayList();
-		list.add("test");
-		list.add("test1");
-		return list;
+		ActivityManager mActivityManager =(ActivityManager)activity.getSystemService(Context.ACTIVITY_SERVICE);
+	    List runningProcess=	mActivityManager.getRunningAppProcesses();
+	    mActivityManager.getDeviceConfigurationInfo();
+	    ArrayList processNames=new ArrayList();
+	    for(Object process:runningProcess){
+	    	RunningAppProcessInfo processInfo=(RunningAppProcessInfo)process;
+	        processNames.add(processInfo.processName);
+	    }
+		return processNames;
 	}
 
 }

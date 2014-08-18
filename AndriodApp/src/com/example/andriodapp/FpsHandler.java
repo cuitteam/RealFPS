@@ -1,5 +1,7 @@
 package com.example.andriodapp;
 
+import com.example.andriodapp.intent.MyIntent;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,6 +22,9 @@ public class FpsHandler extends ActivityInitHandler {
 		back=(Button)activity.findViewById(R.id.button1);
 		txt=(TextView)activity.findViewById(R.id.textView1);
 		txt.setBackgroundColor(Color.GREEN);
+		activity.getCallingActivity();
+		//MyIntent myIntent=(MyIntent)activity.getIntent();
+	//	txt.append(" processName:"+myIntent.getMessage());
 		back.setOnClickListener(new OnClickListener(){
 
 			@Override
