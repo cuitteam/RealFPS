@@ -21,7 +21,7 @@ public class FpsHandler extends ActivityInitHandler {
 	public void initListeners() {
 		back=(Button)activity.findViewById(R.id.button1);
 		txt=(TextView)activity.findViewById(R.id.textView1);
-		txt.setBackgroundColor(Color.GREEN);
+//		txt.setBackgroundColor(Color.GREEN);
 		activity.getCallingActivity();
 		//MyIntent myIntent=(MyIntent)activity.getIntent();
 	//	txt.append(" processName:"+myIntent.getMessage());
@@ -40,7 +40,8 @@ public class FpsHandler extends ActivityInitHandler {
 	@Override
 	public void initParamters() {
 		//initLogic  like show the fps 
-
+		Object wifi=activity.getSystemService(Activity.WALLPAPER_SERVICE);
+		System.out.println("sdfds");
 	}
 
 }

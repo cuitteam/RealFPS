@@ -2,6 +2,8 @@ package com.example.andriodapp;
 
 import java.util.ArrayList;
 
+import java.util.HashMap;
+
 import java.util.List;
 
 import com.example.andriodapp.intent.MyIntent;
@@ -11,6 +13,8 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -88,9 +92,26 @@ public void initParamters() {
 	    List runningProcess=	mActivityManager.getRunningAppProcesses();
 	    mActivityManager.getDeviceConfigurationInfo();
 	    ArrayList processNames=new ArrayList();
+	    
+	    
+	    //get installInformation
+	     List<PackageInfo> intsllPacks = activity.getPackageManager().getInstalledPackages(0);     
+	     HashMap<String,String> packInfo=new HashMap<String,String>(); 
+	     PackageManager pkMag=activity.getPackageManager();
+	     for(int i=0;i<intsllPacks.size();i++) {     
+	            PackageInfo p = intsllPacks.get(i);     
+	            if ((p.versionName == null)) {     
+	                continue ;     
+	            }       	            
+	            packInfo.put(p.packageName, p.applicationInfo.loadLabel(pkMag).toString());   
+	        }  
+	    
 	    for(Object process:runningProcess){
 	    	RunningAppProcessInfo processInfo=(RunningAppProcessInfo)process;
-	        processNames.add(processInfo.processName);
+	    	if(packInfo.get(processInfo.processName)==null){
+	    		continue;
+	    	}
+	        processNames.add(packInfo.get(processInfo.processName));
 	    }
 		return processNames;
 	}

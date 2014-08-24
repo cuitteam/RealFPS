@@ -9,7 +9,9 @@
         android:layout_height="fill_parent"
         android:layout_above="@+id/button1"
         android:layout_alignParentLeft="true"
-        android:text="Hi  Fps  is 2.3"
+        android:background="@drawable/fps_bg"
+        android:gravity="bottom"
+        android:text="How this looks"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
@@ -19,6 +21,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="33dp"
+        android:background="@drawable/btn_bg"
         android:text="BackToWelcomePage"
         android:textSize="@dimen/activity_vertical_margin"
         android:textStyle="bold" />
