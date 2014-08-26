@@ -1,4 +1,4 @@
-package com.example.andriodapp.windows;
+package com.example.androidapp.windows;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +10,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TableLayout;

@@ -1,10 +1,10 @@
-package com.example.andriodapp;
+package com.example.androidapp;
 
-import com.example.andriodapp.intent.MyIntent;
+import com.example.andriodapp.R;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -40,7 +40,7 @@ public class FpsHandler extends ActivityInitHandler {
 	@Override
 	public void initParamters() {
 		//initLogic  like show the fps 
-		Object wifi=activity.getSystemService(Activity.WALLPAPER_SERVICE);
+		Object wifi=activity.getSystemService(Context.WALLPAPER_SERVICE);
 		System.out.println("sdfds");
 	}
 

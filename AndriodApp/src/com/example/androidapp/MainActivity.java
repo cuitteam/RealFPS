@@ -1,4 +1,6 @@
-package com.example.andriodapp;
+package com.example.androidapp;
+
+import com.example.andriodapp.R;
 
 import android.os.Bundle;
 import android.app.Activity;

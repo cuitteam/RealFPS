@@ -1,4 +1,4 @@
-package com.example.andriodapp.logic;
+package com.example.androidapp.logic;
 
 import android.app.Activity;
 

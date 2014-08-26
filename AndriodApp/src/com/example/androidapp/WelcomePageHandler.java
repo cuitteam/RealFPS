@@ -1,4 +1,4 @@
-package com.example.andriodapp;
+package com.example.androidapp;
 
 import java.util.ArrayList;
 
@@ -6,20 +6,18 @@ import java.util.HashMap;
 
 import java.util.List;
 
-import com.example.andriodapp.intent.MyIntent;
+import com.example.andriodapp.R;
+import com.example.androidapp.intent.MyIntent;
 
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -68,6 +66,7 @@ public class WelcomePageHandler extends ActivityInitHandler {
 			public void onClick(View arg0) {
  
 //				System.out.println("clicked");
+//				local variable fps never used ???
 				FpsActivity fps=new FpsActivity();
 				MyIntent fpsIntent= new MyIntent(activity, FpsActivity.class);  
 				fpsIntent.setMessage(prossName);
@@ -76,6 +75,7 @@ public class WelcomePageHandler extends ActivityInitHandler {
 			
 		});
 	}
+@Override
 public void initParamters() {
       sp.setAdapter(new ArrayAdapter(activity, android.R.layout.simple_dropdown_item_1line, scanProcessList()));
 	}
@@ -86,12 +86,13 @@ public void initParamters() {
 	 * @return
 	 * prepare the processList of device
 	 */
-	private List scanProcessList(){
+	private List<Object> scanProcessList(){
 		//logic call the service of andriod
 		ActivityManager mActivityManager =(ActivityManager)activity.getSystemService(Context.ACTIVITY_SERVICE);
-	    List runningProcess=	mActivityManager.getRunningAppProcesses();
+	    List<RunningAppProcessInfo> runningProcess=	mActivityManager.getRunningAppProcesses();
+	    // 为啥需要加如下这句呢？感觉也没引用到啊
 	    mActivityManager.getDeviceConfigurationInfo();
-	    ArrayList processNames=new ArrayList();
+	    ArrayList<Object> processNames=new ArrayList<Object>();
 	    
 	    
 	    //get installInformation

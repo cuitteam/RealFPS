@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" android:persistent="true">
         <activity
-            android:name="com.example.andriodapp.MainActivity"
+            android:name="com.example.androidapp.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +24,11 @@
         </activity>
         
         <activity
-            android:name="com.example.andriodapp.FpsActivity"
+            android:name="com.example.androidapp.FpsActivity"
             android:label="@string/app_name" >
         </activity>
         <receiver android:name="com.example.androidapp.reciever.TestReciever"></receiver>
-        <service android:name=".service.TestService"></service>
+        <service android:name="com.example.androidapp.service.TestService"></service>
     </application>
   <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

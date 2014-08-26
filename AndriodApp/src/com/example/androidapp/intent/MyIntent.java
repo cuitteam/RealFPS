@@ -1,4 +1,4 @@
-package com.example.andriodapp.intent;
+package com.example.androidapp.intent;
 
 import android.content.Context;
 import android.content.Intent;
