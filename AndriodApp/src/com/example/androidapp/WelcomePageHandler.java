@@ -41,7 +41,7 @@ public class WelcomePageHandler extends ActivityInitHandler {
 	@Override
 	public void initListeners() {
 		sp=(Spinner)activity.findViewById(R.id.spinner1);
-		startButton=(Button)activity.findViewById(R.id.button1);
+		startButton=(Button)activity.findViewById(R.id.start_btn);
 		sp.setOnItemSelectedListener(new OnItemSelectedListener(){
 
 			@Override

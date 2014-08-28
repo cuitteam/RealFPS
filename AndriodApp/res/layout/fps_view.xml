@@ -4,14 +4,14 @@
     android:layout_height="match_parent" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/start_btn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="78dp"
+        android:layout_marginBottom="78sp"
         android:background="@drawable/btn_bg"
-        android:text="         Start              " />
+        android:text="@string/start_btn_text" />
 
     <Spinner
         android:id="@+id/spinner1"
@@ -19,9 +19,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="22sp"
         android:background="@drawable/list_bg"
-        android:textSize="12dip"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
