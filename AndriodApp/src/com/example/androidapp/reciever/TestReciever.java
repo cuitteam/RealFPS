@@ -9,7 +9,7 @@ public class TestReciever extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
-       System.out.println("sdf");
+		System.out.println("sdf");
 	}
 
 }

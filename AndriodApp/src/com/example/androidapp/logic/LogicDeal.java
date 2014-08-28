@@ -15,6 +15,5 @@ public abstract class LogicDeal {
 	}
 	
 	public abstract void executeLogic();
-	
-	
+
 }
